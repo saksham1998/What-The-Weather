@@ -1,0 +1,116 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+/*#body{
+	margin:0;
+	background-image: url('weather1.jpeg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}*/
+#myVideo {
+	z-index: -1;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+#header{
+	text-align: center;
+	max-width:50%;
+	margin:10px auto;
+	padding:20px;
+	color: black;
+	font-family: mali;
+	letter-spacing: 5px;
+}
+#quotes{
+	margin-top:27px;
+	color:black;
+	font-weight: bolder;
+}
+#add input{
+  border: none;
+  display: block;
+  width: 50%;
+  height: 40px;
+  margin: 50px auto;
+  padding: 32px;
+  color: #333;
+  box-shadow: 0 1px 15px 1px rgba(0,0,0,0.5);
+  font-weight: bolder;
+  font-size: 22px;
+  font-family: mali;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  text-transform: capitalize;
+}
+input[type=text]:focus{
+	background-color: #CCD4D8;
+	text-transform: capitalize;
+}
+#load{
+	margin:7px;
+	text-align: center;
+	font-weight: bolder;
+	font-family: mali; 
+}
+#info{
+	display: none;
+}
+#info p{
+	font-weight: bolder;
+	font-family: mali;
+	font-size: 140%;
+	padding: 8px;
+	text-align: center;		
+}
+#error{
+	font-weight: bolder;
+	font-family: mali;
+	font-size: 140%;
+	padding: 8px;
+	text-align: center;	
+	display: none;
+}
+#footer{
+	position: absolute;
+	bottom: 0;
+	font-weight: bolder;
+	font-family: mali;
+	text-align: center;
+	color: #767360;
+}
+@media screen and (max-width: 1200px){
+	#add input{
+		width:75%;
+	}
+	#header{
+		max-width: 50%;
+	}
+	#footer{
+		width:20%;
+		position: fixed;
+		bottom: 0;
+		left:0;
+	}
+}
+@media screen and (max-width: 680px){
+	#add input{
+		width:90%;
+	}
+	#header{
+		max-width: 100%;
+	}
+	#footer{
+		width:5%;
+		position: relative;
+		bottom:0;
+	}
+	#load{
+		margin: 2px;
+	}
+}

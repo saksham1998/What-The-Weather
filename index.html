@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather App</title>
+<link href="//fonts.googleapis.com/css?family=Mali|Spicy+Rice" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/styles/style.css">
+<link rel="icon"  href="/media/favicon.png">
+<meta charset="utf-8">
+<meta lang="en-US">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="saksham">
+</head>
+<body onload="header()">
+<div id="header">
+	<h1>What's The Weather</h1>
+	<p id="quotes"></p>
+</div>
+<div id="add">
+	<input type="text" name="address" id="address" onchange = "func(),typeWriter()"  placeholder="Uttam Nagar, New Delhi, India">
+</div>
+<p id="load"></p>
+
+<div id="info">
+<p id="place" style="text-transform: capitalize;"></p>
+<p id="temp"></p>
+<p id="humidity"></p>
+<p id="uv"></p>
+<p id="windSpeed"></p>
+<p id="visibility"></p>
+<p id="summary"></p>
+</div>
+<p id="error"></p>
+<video autoplay muted loop id="myVideo">
+  <source src="/media/rain.mp4" type="video/mp4" id="play">
+  Your browser does not support HTML5 video.
+</video>
+<p id="footer"></p>
+	<script src="/scripts/geocode.js"></script>
+	<script src="/scripts/main.js"></script>
+
+	
+				<script>
+					function header(){
+						const arr = ['Wherever you go, no matter what the weather, always bring your own sunshine','Who cares about the clouds when we\'re together? Just sing a song and bring the sunny weather','Bad weather always looks worse through a window.','There is no such thing as bad weather, only different kinds of good weather.','It is only in sorrow bad weather masters us; in joy we face the storm and defy it.','If you want to see the sunshine, you have to weather the storm.','Climate is what we expect, weather is what we get.','It doesn\'t matter what people say about me, I weather the storm.','We may achieve climate, but weather is thrust upon us.','There\'s no such thing as bad weather, just soft people.'];
+						var num = Math.floor(Math.random()*9);
+						document.getElementById("quotes").textContent = arr[num];
+					}
+					var i = 0;
+					var txt = 'Fetching Weather Information for you.....';
+					var speed = 40;
+
+					function typeWriter() {
+						  if (i < txt.length) {
+						    document.getElementById("load").innerHTML += txt.charAt(i);
+						    i++;
+						    var load = setTimeout(typeWriter, speed);
+						  }
+						  else {
+							document.getElementById("load").innerHTML="";
+							i=0;
+						  }
+						}
+					var footerEl = document.getElementById("footer");
+					footerEl.innerHTML = `Designed and Devolped By Saksham Manocha &copy;${new Date().getFullYear()}`
+				</script>
+</body>
+</html>
